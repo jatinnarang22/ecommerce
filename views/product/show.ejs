@@ -1,0 +1,15 @@
+<!-- <% layout('layouts/boilerplate')%> -->
+<% layout('layouts/boilerplate') %>
+
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="<%= findid.img %>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= findid.name %></h5>
+      <p class="card-text"><%= findid.desc %></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="/products/<%= findid._id%>/edit" class="btn btn-primary">Update</a>
+      <form action="/products/findid._id?_method=DELETE" method="post" >
+        <button type="submit" class="btn btn-sm btn-success">Delete</button>
+    </form>
+    </div>
