@@ -4,7 +4,8 @@ let path = require('path');
 const mongoose = require('mongoose');
 let seedDB = require('./seed');
 let ejsMate = require('ejs-mate');
-let productRoutes = require('./routes/products/productsRoutes')
+let productRoutes = require('./routes/products/productsRoutes');
+let revRoutes = require('./routes/review');
 let methodOverride =  require('method-override');
 
 mongoose.set('strictQuery' , true);
@@ -21,10 +22,11 @@ app.set('view engine' , 'ejs');
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname , 'public'))); //static files
 app.use(productRoutes);
-// seedxDB();
+app.use(revRoutes);
+// seedDB();
 
 
-let port = 5000;
+let port = 8000;
 app.listen(port , ()=>{
     console.log(`server connected at port ${port}`)
 })
