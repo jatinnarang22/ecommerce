@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate') -%>
+
+<div class="row">
+  <div class="col-md-5 mx-auto">
+    <div class="card p-3 shadow-sm m-2">
+      <h1 class="display-6">Login</h1>
+      <form action="/create-session" method="post">
+        <div class="mb-3">
+          <label class="form-label" for="email">Email</label>
+          <input
+            class="form-control"
+            type="text"
+            name="email"
+            id="email"
+            placeholder="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="password">Password</label>
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <button type="submit" class="btn btn-success btn-block btn-small">
+          Login
+        </button>
+        <p class="fw-light mt-2">
+          Don't have an account yet ? <a href="/signup">SignUp</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
